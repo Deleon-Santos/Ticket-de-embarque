@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aeaf97f2-92dd-44d8-ab84-7323c6fb2b75" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teste.py" beforeDir="false" />
-    </list>
+    <list default="true" id="aeaf97f2-92dd-44d8-ab84-7323c6fb2b75" name="Changes" comment="&quot;impletados o aquivo qrcode&quot;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -82,6 +78,19 @@
       <option name="presentableId" value="Default" />
       <updated>1703884043486</updated>
     </task>
+    <task id="LOCAL-00001" summary="&quot;impletados o aquivo qrcode&quot;">
+      <option name="closed" value="true" />
+      <created>1704113492579</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1704113492579</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="&quot;impletados o aquivo qrcode&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;impletados o aquivo qrcode&quot;" />
   </component>
 </project>
