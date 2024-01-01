@@ -81,3 +81,4 @@ while True:
         pdf_file = criar_pdf(ticket_info, qr_code_file)
         sg.popup(f"PDF gerado: {pdf_file}")
         sg.popup(informacao(valores))
+window.close()

@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aeaf97f2-92dd-44d8-ab84-7323c6fb2b75" name="Changes" comment="&quot;impletados o aquivo qrcode&quot;" />
+    <list default="true" id="aeaf97f2-92dd-44d8-ab84-7323c6fb2b75" name="Changes" comment="&quot;impletados o aquivo qrcode&quot;">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gerador de Tickets de Embarque.py" beforeDir="false" afterPath="$PROJECT_DIR$/Gerador de Tickets de Embarque.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qrcode.png" beforeDir="false" afterPath="$PROJECT_DIR$/qrcode.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticket_embarque.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/ticket_embarque.pdf" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +20,14 @@
       <list>
         <option value="Python Script" />
       </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
     </option>
   </component>
   <component name="ProjectColorInfo">{
@@ -86,11 +99,38 @@
       <option name="project" value="LOCAL" />
       <updated>1704113492579</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="&quot;impletados o aquivo qrcode&quot;">
+      <option name="closed" value="true" />
+      <created>1704113934184</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1704113934184</updated>
+    </task>
+    <task id="LOCAL-00003" summary="&quot;impletados o aquivo qrcode&quot;">
+      <option name="closed" value="true" />
+      <created>1704114021085</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1704114021085</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="&quot;impletados o aquivo qrcode&quot;" />
     <option name="LAST_COMMIT_MESSAGE" value="&quot;impletados o aquivo qrcode&quot;" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Gerador de Tickets de Embarque.py</url>
+          <line>19</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
