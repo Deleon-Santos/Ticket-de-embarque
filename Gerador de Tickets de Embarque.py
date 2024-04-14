@@ -4,20 +4,29 @@ import PySimpleGUI as sg
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 import qrcode
+sg.SetOptions(background_color='#363636', text_element_background_color='#363636', element_background_color='#363636', scrollbar_color=None, input_elements_background_color='#F7F3EC', button_color=('white', '#4F4F4F'))
 
-layout=[[sg.Text("Nome Completo:",size=(15,1)),sg.Input(key="-NOME-",do_not_clear=True,size=(25,1))],
-        [sg.Text("N° Passaporte:",size=(28,1)),sg.Input(key="-PASSAPORTE-",do_not_clear=True,size=(10,1))],
-        [sg.Radio("Masculino","RADIO",key="-masculino-",default=True),sg.Radio("Feminino","RADIO",key="-feminino-")],
-        [sg.CalendarButton("Data de Partida",size=(20,1),close_when_date_chosen=True,target="-partida-",location=(0,0),no_titlebar=False),
-         sg.Input(key="-partida-",size=(18,1))],
-        [sg.CalendarButton("Data de Retorno",size=(20,1),close_when_date_chosen=True,target="-retorno-",location=(0,0),no_titlebar=False),
-         sg.Input(key="-retorno-",size=(18,1))],
+col1=[[sg.Listbox(["São Paulo","Rio de Janeiro","Maceio","Curitiba","Paraiba","Porto Seguro","Manaus","Belém","São Luiz"],
+                    size=(50,5),font=('Any',11),select_mode="single",key="-DESTINO-")],]
+#col2=[[sg.Image(filename="Jotchua.jpeg",size=(400,100))],]
+
+layout=[
+        [sg.Text("Nome Completo:",size=(10,1),font=('Any',10))],
+        [sg.Input(key="-NOME-",do_not_clear=True,size=(32,1),font=('Any',18))],
+        [sg.Text("N° Passaporte",size=(30,1)),sg.T('Sexo')],
+        [sg.Input(key="-PASSAPORTE-",do_not_clear=True,size=(18,1),font=('Any',18)),
+         sg.Radio("Masculino","RADIO",key="-masculino-",default=True),sg.Radio("Feminino","RADIO",key="-feminino-")],
+        [sg.T("Embarque",size=(26,1)),sg.T("Retorno")],
+        [sg.CalendarButton("Data",size=(5,1),font=('Any',9),close_when_date_chosen=True,target="-partida-",location=(0,0),no_titlebar=False),
+         sg.Input(key="-partida-",size=(18,1),font=('Any',11)),sg.Push(),
+        sg.CalendarButton("Data",size=(5,1),font=('Any',9),close_when_date_chosen=True,target="-retorno-",location=(0,0),no_titlebar=False),
+         sg.Input(key="-retorno-",size=(18,1),font=('Any',11))],
         [sg.Text("Lista de Destinos")],
-        [sg.Listbox(["São Paulo","Rio de Janeiro","Maceio","Curitiba","Paraiba","Porto Seguro","Manaus","Belém","São Luiz"],
-                    size=(42,5),select_mode="single",key="-DESTINO-")],
+        [sg.Col(col1)],
+        
         [sg.Button("RESERVAR"),sg.Button("SAIR")],]
 
-window=sg.Window("PASSAGEIRO",layout,resizable=True)
+window=sg.Window("PASSAGEIRO",layout)
 
 #A função "informação" revebe os valores e formata em uma unica strig
 def informacao(valores):
@@ -72,13 +81,18 @@ def criar_pdf(content, qr_filename):
     return pdf_filename
 
 while True:
-    eventos, valores = window.read()
-    if eventos in (sg.WIN_CLOSED, "SAIR"):
-        break
-    elif eventos == "RESERVAR":
-        ticket_info = informacao(valores)
-        qr_code_file = gerar_qrcode(ticket_info)
-        pdf_file = criar_pdf(ticket_info, qr_code_file)
-        sg.popup(f"PDF gerado: {pdf_file}")
-        sg.popup(informacao(valores))
+    try:
+        eventos, valores = window.read()
+        if eventos in (sg.WIN_CLOSED, "SAIR"):
+            break
+        
+        elif eventos == "RESERVAR":
+            
+            ticket_info = informacao(valores)
+            qr_code_file = gerar_qrcode(ticket_info)
+            pdf_file = criar_pdf(ticket_info, qr_code_file)
+            sg.popup(f"PDF gerado: {pdf_file}")
+            sg.popup(informacao(valores))
+    except Exception as e:
+        sg.popup(f'Erro{e}')
 window.close()

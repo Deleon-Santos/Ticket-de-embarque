@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aeaf97f2-92dd-44d8-ab84-7323c6fb2b75" name="Changes" comment="&quot;impletados o aquivo qrcode&quot;">
+    <list default="true" id="aeaf97f2-92dd-44d8-ab84-7323c6fb2b75" name="Changes" comment="&quot;implementados os aquivos qrcode&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gerador de Tickets de Embarque.py" beforeDir="false" afterPath="$PROJECT_DIR$/Gerador de Tickets de Embarque.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qrcode.png" beforeDir="false" afterPath="$PROJECT_DIR$/qrcode.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticket_embarque.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/ticket_embarque.pdf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,12 +112,21 @@
       <option name="project" value="LOCAL" />
       <updated>1704114021085</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="&quot;implementados os aquivos qrcode&quot;">
+      <option name="closed" value="true" />
+      <created>1704116242943</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1704116242943</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="&quot;impletados o aquivo qrcode&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;impletados o aquivo qrcode&quot;" />
+    <MESSAGE value="&quot;implementados os aquivos qrcode&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;implementados os aquivos qrcode&quot;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
