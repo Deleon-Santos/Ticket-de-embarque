@@ -40,8 +40,6 @@ def informacao(valores):
     informacao += f" Destino : {valores['-DESTINO-'] [0]} \n"
     informacao += f"""
 
-Aqui estão alguns exemplos de termos de uso comuns em passagens aéreas relacionados a políticas
-de cancelamento e alterações de voo:
 
 Políticas de Cancelamento:
 
