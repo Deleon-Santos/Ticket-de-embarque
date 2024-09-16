@@ -1,62 +1,30 @@
-# Documentação do Software Cadastro de Itens
+# Gerenciador de Ticket de Passagens Aéreas e Terrestres
 
-O **Cadastro de Itens** é um software desenvolvido em Python utilizando as bibliotecas PySimpleGUI e pandas. Ele oferece uma interface gráfica simples para o usuário inserir informações sobre itens, como nome, código EAN, descrição, quantidade e preço, e permite exportar esses dados para uma planilha eletrônica .
+## Descrição Geral
 
-## Recursos Principais
+Este projeto visa desenvolver um gerenciador de tickets de passagens aéreas ou terrestres que gera um QR code e imprime um PDF com as informações do passageiro, incluindo dados de embarque, retorno e destino. A interface gráfica é implementada com **PySimpleGUI**, e a geração do PDF é realizada com **ReportLab**. A funcionalidade de QR code é implementada usando a biblioteca **qrcode**.
 
-- **Interface Gráfica Intuitiva**:
-  - Utilização de PySimpleGUI para construção da interface gráfica.
-  - Inclusão de imagem de login para uma experiência visual mais completa.
+## Tecnologias Utilizadas
 
-- **Funcionalidades**:
-  - Inserção de informações sobre o item (nome, EAN, descrição, quantidade, preço).
-  - Tratamento e validação dos dados inseridos na interface principal `try Except`.
-  - Registro dos itens em uma lista primaria.
-  - Visualização dos itens registrados em uma tabela.
-  - Exportação dos dados para uma planilha eletrônica em formato Excel (.xlsx).
-  - Registro dos dados em um BD externo.
-    
-## Estrutura do Código
+![Python](https://img.icons8.com/color/48/000000/python.png)  
+**Python:** Linguagem principal utilizada para desenvolvimento da aplicação.
 
-O código está estruturado da seguinte maneira:
+![PySimpleGUI](https://img.icons8.com/color/48/000000/pysimplegui.png)  
+**PySimpleGUI:** Utilizada para criar a interface gráfica de forma simples e intuitiva.
 
-- **Configuração de Interface**:
-  - Definição de cores e estilos para a interface gráfica usando `sg.SetOptions`.
+![ReportLab](https://img.icons8.com/color/48/000000/pdf.png)  
+**ReportLab:** Usada para gerar o PDF que contém as informações do passageiro e o QR code.
 
-- **Definição de Layout**:
-  - Organização dos elementos visuais (campos de entrada, botões e tabela) dentro de frames e layouts.
+![QRcode](https://img.icons8.com/color/48/000000/qr-code.png)  
+**qrcode:** Biblioteca utilizada para gerar o QR code com as informações do ticket.
 
-- **Loop Principal**:
-  - Utilização de um loop principal (`while True`) para capturar eventos da interface.
+## Funcionalidades Principais
 
-- **Eventos**:
-  - Manipulação de eventos como registro de item (`REGISTRAR`), exportação para planilha (`PLANILHA`) e fechamento da janela (`SAIR`).
+- **Cadastro do Passageiro:** Coleta o nome completo, número do passaporte, destino, e datas de partida e retorno.
+- **Geração de QR Code:** Cria um QR code com as informações do ticket.
+- **Geração de PDF:** Exporta as informações em um arquivo PDF com o QR code.
+- **Políticas de Cancelamento e Alteração:** Exibe políticas de voo e restrições diretamente no ticket gerado.
 
-- **Interação com pandas**:
-  - Uso do pandas para manipulação e exportação dos dados para uma planilha Excel.
+## desenvolvido por 
 
-- **Interação com MySQL**:
-  - O sistema usa SQL em sua estrutura principal para armazenamento, leitura e manipulação de dados `mysql.connector.connect`.
-
-## Uso
-
-1. Execute o código para iniciar a aplicação.
-2. Preencha os campos de entrada com as informações do item.
-3. Clique em "REGISTRAR" para adicionar o item à lista.
-4. Para exportar os dados para uma planilha, clique em "PLANILHA" e selecione o local de salvamento.
-5. Explore outras funcionalidades, como visualizar os itens na tabela e fechar a aplicação.
-
-## Requisitos
-
-- Python 3.x
-- PySimpleGUI
-- pandas
-
-## Desenvolvedor
-
-Desenvolvido por Deleon Santos.
-
----
-
-Este software oferece uma solução prática para o cadastro e exportação de itens em uma interface gráfica amigável. Ele pode ser utilizado como base para desenvolver sistemas mais completos de gerenciamento de itens em Python.
-# Tabelas-em-Python
+- **Deleon Santos**
