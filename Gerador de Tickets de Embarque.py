@@ -10,11 +10,11 @@ col1=[[sg.Listbox(["São Paulo","Rio de Janeiro","Maceio","Curitiba","Paraiba","
                     size=(50,5),font=('Any',11),select_mode="single",key="-DESTINO-")],]
 #col2=[[sg.Image(filename="Jotchua.jpeg",size=(400,100))],]
 
-layout=[
+frame=[
         [sg.Text("Nome Completo:",size=(10,1),font=('Any',10))],
-        [sg.Input("João Ferreira de Souza",key="-NOME-",do_not_clear=True,size=(32,1),font=('Any',18))],
+        [sg.Input(key="-NOME-",do_not_clear=True,size=(32,1),font=('Any',18))],
         [sg.Text("N° Passaporte",size=(30,1)),sg.T('Sexo')],
-        [sg.Input("123456789-9",key="-PASSAPORTE-",do_not_clear=True,size=(18,1),font=('Any',18)),
+        [sg.Input(key="-PASSAPORTE-",do_not_clear=True,size=(18,1),font=('Any',18)),
          sg.Radio("Masculino","RADIO",key="-masculino-",default=True),sg.Radio("Feminino","RADIO",key="-feminino-")],
         [sg.T("Embarque",size=(26,1)),sg.T("Retorno")],
         [sg.CalendarButton("Data",size=(5,1),font=('Any',9),close_when_date_chosen=True,target="-partida-",location=(0,0),no_titlebar=False),
@@ -24,7 +24,11 @@ layout=[
         [sg.Text("Lista de Destinos")],
         [sg.Col(col1)],
         
-        [sg.Button("RESERVAR"),sg.Button("SAIR")],]
+        ]
+layout=[
+    [sg.P(),sg.T('DE MALA E CUAI', font=("Any",25,'bold')),sg.P()],
+    [sg.T("",size=(5,1)),sg.Frame('',frame),sg.T("",size=(5,1))],
+    [sg.P(),sg.Button("RESERVAR",size=(10,1)),sg.Button("SAIR",size=(10,1),button_color='red'),sg. P()],]
 
 window=sg.Window("PASSAGEIRO",layout)
 
@@ -109,18 +113,29 @@ def criar_pdf(content, qr_filename):
     return pdf_filename
 
 while True:
-    try:
-        eventos, valores = window.read()
-        if eventos in (sg.WIN_CLOSED, "SAIR"):
-            break
+    
+    eventos, valores = window.read()
+    if eventos in (sg.WIN_CLOSED, "SAIR"):
+        break
+    
+    elif eventos == "RESERVAR":
+        try:
+            nome=str(valores['-NOME-']).upper()
+            passaporte=int(valores['-PASSAPORTE-'])
+            destino=str(valores['-DESTINO-'])
         
-        elif eventos == "RESERVAR":
-            
-            ticket_info = informacao(valores)
-            qr_code_file = gerar_qrcode(ticket_info)
-            pdf_file = criar_pdf(ticket_info, qr_code_file)
-            sg.popup(f"PDF gerado: {pdf_file}")
-            
-    except Exception as e:
-        sg.popup(f'Erro{e}')
+        
+            if not nome or not passaporte or not valores['-partida-'] or not valores['-retorno-'] or not destino:
+                sg.popup('Preencha todos os campos do formulario')
+                continue
+            else:
+                window["-NOME-"].update(nome)
+                ticket_info = informacao(valores)
+                qr_code_file = gerar_qrcode(ticket_info)
+                pdf_file = criar_pdf(ticket_info, qr_code_file)
+                sg.popup(f"PDF gerado: {pdf_file}")
+        except ValueError:
+            sg.popup('Erro! entrada de valores incorretos')
+            continue    
+    
 window.close()
